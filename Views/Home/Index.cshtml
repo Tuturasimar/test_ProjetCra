@@ -1,0 +1,24 @@
+﻿@model projet2_CRA.ViewModels.HomeViewModel
+@{
+    Layout = "_LayoutDuSite";
+    ViewBag.Title = "Accueil";
+}
+
+    <h2>Je suis la vue index</h2>
+    <table id="users">
+        <tr>
+            <th>Login</th>
+            <th>Créé le</th>
+            <th>Détails</th>
+            <th>Modifier</th>
+        </tr>
+        @foreach (var user in @Model.Users)
+        {
+            <tr>
+                <td>@user.Login</td>
+                <td>@user.CreationDate.ToString("dd/MM/yyyy")</td>
+                <td>@Html.ActionLink("Détails", "UserDetail", "Home", new { id = user.Id })</td>
+                <td>@Html.ActionLink("Modifier", "UserForm", "Home", new { id = user.Id })</td>
+            </tr>
+        }
+    </table>

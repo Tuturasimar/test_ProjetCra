@@ -1,0 +1,27 @@
+﻿@model projet2_CRA.Models.User
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using (Html.BeginForm("UserForm","Home",FormMethod.Post))
+{
+    <fieldset>
+        <legend>Connexion : </legend>
+        @Html.HiddenFor(m => Model.Id)
+        @Html.Label("Login", "Login : ")
+        @Html.TextBoxFor(mn => Model.Login)
+        <br />
+        @Html.Label("FirstName", "Prénom : ")
+        @Html.TextBoxFor(m => Model.UserData.Firstname)
+        <br />
+        @Html.Label("LastName", "Nom : ")
+        @Html.TextBoxFor(m => Model.UserData.Lastname)
+        <br />
+        @Html.Label("BirthDay", "Date de naissance : ")
+        @Html.EditorFor(m => Model.UserData.Birthday)
+        <br />
+        @Html.Label("Email", "Email : ")
+        @Html.TextBoxFor(m => Model.UserData.Email)
+        <br />
+        <input type="submit" value="Se Connecter..." />
+    </fieldset>
+}
