@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="/css/Site.css" rel="stylesheet" />
+    @RenderSection("UltraCss", required: false)
+</head>
+<body>
+   <header>
+       <h1>EasyFid</h1>
+   </header>
+        <div id="contenu">
+            <div id="barreLaterale">
+                <ul>
+                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                    <li><a>Random lien</a></li>
+                    <li><a>Random lien</a></li>
+                </ul>
+            </div>
+            <div id="contenuCentral">
+                @RenderBody()
+            </div>
+           
+        </div>
+   <footer><p>Projet 2 - CRA</p>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
